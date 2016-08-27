@@ -1,0 +1,23 @@
+
+InitGraphics
+{
+
+	1. Load Vertices
+								----buffers exist in both system and video memory. initially the data in such a buffer 
+									will be stored in system memory. When rendering calls for it
+								----Direct3D copy it over to video memory(video RAM).
+								
+									If the video card becomes low on memory, Direct3D will delete buffers that haven't 
+									been used in a while. or are considered "low priority", in order to make room for newer
+									resources.
+
+	2.D3D11_BUFFER_DESC
+						-------vertexDesc.Usage     =  D3D11_USAGE_DEFAULT
+					    -------vertexDesc.ByteWidth = sizeof(Vertex) * ARRAYSIZE(VerticesArray);
+	
+	3.D3D11_SUBRESOURCE_DATA
+							------- resourceData.pSysMem = vertices;
+
+	4.Device->CreateBuffer(&vertexDesc,&resourceData,&p_vertexBuffer);
+}
+

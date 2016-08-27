@@ -1,0 +1,42 @@
+
+Init_PipleLine
+{
+	SetUp Vertex Shader
+	{
+		1. Create a ShaderFile { ID3DBlob* VSFile = 0; }
+
+		2. CompileD3DShader--------("TextureMap.txt", "VS_Main", "vs_4_0", &VSFile);
+
+		3. CreateVertexShader------(VSFile->GetBufferPointer(), VSFile->GetBufferSize(), 0, &p_vertexShader);
+
+		4. D3dContext->VSSetShader(p_vertexShader, nullptr, 0); // some time we do it in render function. For different Obj, which 
+																// use different shader
+
+		5. Vertex Input Layout
+							--------D3D11_INPUT_ELEMENT_DESC vertexInputLayoutARRAY[] = {
+										 { "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
+										 { "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,    0, 12,D3D11_INPUT_PER_VERTEX_DATA, 0 }};
+	
+		6. Device->CreateInputLayout
+									CreateInputLayout( vertexInputLayoutARRAY,
+													   ARRAYSIZE(vertexInputLayoutARRAY),
+													   VSFile->GetBufferPointer(), 
+													   VSFile->GetBufferSize(),
+													   &p_inputLayout);
+
+	
+		7. D3dContext->IASetInputLayout(p_inputLayout); //		Active the layout.....some time we should do it in render function, 
+														// fore render different type of model(some model may not have texture).
+
+	}
+
+	Set Up Pixel Shader
+	{
+		almost same as the Vertex shader.....
+		instead without the 5 6 and 7 steps.
+	
+	}
+
+
+
+}

@@ -1,0 +1,23 @@
+
+1. List--------DriverType
+2. List--------FeatureLevel
+3. Get---------Window{Right,Left,Top,Bottom}
+4. Create------Device and SwapChain
+5. SetUp-------RenderTargetView
+			   
+			   optional_set_up_basics:
+				     Setting_the_Viewport: A viewport is a way of telling Direct3D how to place normalized device coordinates.
+
+              
+			   optional:
+						LoadContent:
+									InitGraphics
+									InitPipeLine
+
+6.Render------ClearRenderTargetView	
+	    ------OMSetRenderTargets
+			  ----------------------------Optional:
+													IASetVertexBuffers
+													IASetPrimitiveTopology
+													Draw
+		------Present								

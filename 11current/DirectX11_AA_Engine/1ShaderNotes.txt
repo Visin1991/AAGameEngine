@@ -1,0 +1,13 @@
+Function	             Description
+mul(a, b)	             Multiplies a and b and returns the result. This function is useful when you wish to multiply matrix variables with other values. Otherwise using the usual * operator will do just fine. The parameters can be scalar, vector or matrix variables.
+pow(base, exponent)      Returns the base raised to the given exponent.
+tan(A)	                 Returns the tangent of the given angle, in radians.
+sin(A)	                 Returns the sine of the given angle, in radians.
+cos(A)	                 Returns the cosine of the given angle, in radians.
+sqrt(a)	                 Returns the squareroot of the given value.
+round(a)	             Rounds the given value to the nearest integer.
+saturate(a)	             Forces the given value to be between 0 and 1. Returns the new value and keeps the original unchanged.
+degrees(A)	             Converts the given angle from radians to degrees.
+radians(A)	             Converts the given angle from degrees to radians.
+min(a, b)	             Returns the smaller of a and b.
+max(a, b)	             Returns the larger of a and b.

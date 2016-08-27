@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{50048088-6d14-4fc7-b8c3-9a1f8ad91f97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{023609b2-0d7f-4210-b1b3-495701565361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX11">
+      <UniqueIdentifier>{f533fe27-198e-4ff8-b4d0-a18a1b7ffd30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{166663ee-9eda-4379-a48e-4cfd314861cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{a375ec3b-4ace-40be-a1a2-9ecc7d8331cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{0fddf954-0b41-4256-8a54-e66c65f708cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{e028d3b4-9c7d-498b-b98e-b63f3ce0bd8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Base">
+      <UniqueIdentifier>{366f5d1c-02c7-4ce3-b326-fd8635f3d0e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Physics">
+      <UniqueIdentifier>{f5bd74ff-2f77-43c1-a652-723d2a925b99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Graphic">
+      <UniqueIdentifier>{c778550d-2374-418f-ae71-7e5518078bc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Physics\Manager">
+      <UniqueIdentifier>{87ff773a-3624-4433-8ee9-43a47131a88b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{69de5299-4c22-471e-b7df-981b49f0e61e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HelperClasses">
+      <UniqueIdentifier>{86587960-1eda-4e1c-9271-961615afbb76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX11\Notes">
+      <UniqueIdentifier>{7bbde39a-6d0f-43d5-9600-9b3d26f840df}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Geometry.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Vector2.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Vector3.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="DXbase.cpp">
+      <Filter>DirectX11</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderEngine.cpp">
+      <Filter>DirectX11</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjLoader.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="SetUpModel.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject2D.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject3D.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="MonoBehaviour.cpp">
+      <Filter>Component\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBody.cpp">
+      <Filter>Component\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Component\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngineManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshFilter.cpp">
+      <Filter>Component\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Component\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="RendererManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Math\AAMath.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Algorithm.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Geometry.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DXbaseConst.h">
+      <Filter>DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="DXbase.h">
+      <Filter>DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderEngine.h">
+      <Filter>DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjLoader.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="SetUpModel.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject2D.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject3D.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MonoBehaviour.h">
+      <Filter>Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBody.h">
+      <Filter>Component\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Component\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBodyManager.h">
+      <Filter>Component\Physics\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngineManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="GameErro.h">
+      <Filter>DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="constants.h">
+      <Filter>DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="GameError.h">
+      <Filter>DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsDefine.h">
+      <Filter>DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshFilter.h">
+      <Filter>Component\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentBaseHeader.h">
+      <Filter>Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Bounds.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Component\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="TextureShader.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="TextureMap.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="KeyInputDeemoShader.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="GreenShader.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="1_SetUp_window.txt">
+      <Filter>DirectX11\Notes</Filter>
+    </Text>
+    <Text Include="2_Init_Graphics.txt">
+      <Filter>DirectX11\Notes</Filter>
+    </Text>
+    <Text Include="3_Init_PipeLine.txt">
+      <Filter>DirectX11\Notes</Filter>
+    </Text>
+    <Text Include="Shader_1.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="Triangle_WithColor.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="1ShaderNotes.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+    <Text Include="WorkingWithConstBuffer.txt">
+      <Filter>Shaders</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="PixelShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="TextureMap.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
