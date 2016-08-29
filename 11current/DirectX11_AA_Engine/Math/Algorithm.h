@@ -8,7 +8,7 @@
 #include <math.h>
 #include <time.h>
 
-#define PI 3.141592654
+#define PI 3.14159265359
 
 namespace AAEngine
 {
@@ -62,6 +62,10 @@ namespace AAEngine
 		Vector2 onUnitCircle = Vector2(cos(angle), sin(angle));
 		Vector2 insideUnitCircle = Vector2(random(0.0f, 1.0f)*cos(angle), random(0.0f, 1.0f)*sin(angle));
 	};
+
+	inline float ToRadians(float degree) {
+		return degree * PI / 180;
+	}
 
 	//-----------------------------------------------
 	// basc comparetion

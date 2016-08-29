@@ -122,6 +122,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="DirectInput.cpp" />
@@ -151,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bounds.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="ComponentBaseHeader.h" />
     <ClInclude Include="Component.h" />
@@ -189,6 +191,7 @@
     <ClInclude Include="Math\Vector3.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="SetUpModel.h" />
+    <ClInclude Include="WindowsVirtualKeyInput.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="1ShaderNotes.txt" />

@@ -24,6 +24,8 @@ namespace AAEngine {
 		~GameObject3D(void);
 		GameObject3D(std::string name);
 		void AddChild(GameObject3D* obj);
+		void Move(float px,float py,float pz);
+		void Rotate(float rx,float ry,float rz);
 		Component* AddComponent(std::string name);
 
 		void Update(float dt);

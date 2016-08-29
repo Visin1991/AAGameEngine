@@ -135,6 +135,9 @@
     <ClCompile Include="RendererManager.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>HelperClasses</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math\AAMath.h">
@@ -252,6 +255,12 @@
       <Filter>Model</Filter>
     </ClInclude>
     <ClInclude Include="RendererManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>HelperClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsVirtualKeyInput.h">
       <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>

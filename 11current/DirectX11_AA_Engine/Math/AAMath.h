@@ -22,4 +22,5 @@ struct MYDXVERTEX {
 	float tx, ty;
 	float nx, ny, nz;
 };
+
 #endif

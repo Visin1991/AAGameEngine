@@ -24,6 +24,14 @@ namespace AAEngine {
 		obj->parent = this;
 	}
 
+	void GameObject3D::Move(float px,float py,float pz) {
+		transform.position = transform.position + Vector3(px,py,pz);
+	}
+
+	void GameObject3D::Rotate(float rx, float ry, float rz) {
+		transform.rotation = transform.rotation + Vector3(rx,ry,rz);
+	}
+
 	Component* GameObject3D::AddComponent(std::string name) {
 		
 		Component* instance = (Component*)Component::CreateInstance(name,this);//make a instance of the Component, also assing the point of the object

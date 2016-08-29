@@ -7,6 +7,7 @@
 #include"Math\AAMath.h"
 #include"MeshManager.h"
 #include"Shader.h"
+#include"WindowsVirtualKeyInput.h"
 
 RenderEngine* RenderEngine::instance = nullptr;
 
@@ -49,10 +50,9 @@ namespace AAEngine {
 
 		    std::map<std::string, std::vector<Renderer*> >::iterator it = RendererManager::instance->RendererTypeByMeshType.begin();
 		
-
 			ID3D11Buffer* vertexBuffer = MeshManager::instance->GetAMesh(it->first)->vertexBuffer; //get instance buffer
 			
-			Shader* theShader= it->second[0]->material->shader;
+			Shader* theShader= it->second[0]->material->shader; 
 			
 
 			UINT stride = sizeof(VERTEX);
@@ -65,24 +65,41 @@ namespace AAEngine {
 			m_pD3dContext->VSSetShader(theShader->vs_Shader, 0, 0);
 			m_pD3dContext->PSSetShader(theShader->ps_Shader, 0, 0);
 			m_pD3dContext->VSSetConstantBuffers(0, 1, &theShader->constantBuffer);
+			
+			if (GetAsyncKeyState(VK_W))
+			{
+				Time += 0.01f;
+			}
+			if (GetAsyncKeyState(VK_S))
+			{
+				Time -= 0.01f;
+			}
 
-			Time += 0.01f;
 			// calculate the world matrices
-			XMMATRIX matRotate[4];
+			XMMATRIX matRotate[7];
 			matRotate[0] = XMMatrixRotationY(Time);
 			matRotate[1] = XMMatrixRotationY(Time + 3.14159f);
+
 			matRotate[2] = XMMatrixRotationY(Time);
 			matRotate[3] = XMMatrixRotationY(Time + 3.14159f);
+
+			matRotate[4] = XMMatrixRotationX(Time);
+			matRotate[5] = XMMatrixRotationX(Time);
+
+			matRotate[6] = XMMatrixRotationY(1.5707963f);
+
+
+
 			XMMATRIX matTranslate[4];
 			matTranslate[0] = XMMatrixTranslation(0.0f, 0.0f, 0.5f);
 			matTranslate[1] = XMMatrixTranslation(0.0f, 0.0f, 0.5f);
+
 			matTranslate[2] = XMMatrixTranslation(0.0f, 0.0f, -0.5f);
 			matTranslate[3] = XMMatrixTranslation(0.0f, 0.0f, -0.5f);
 
-			float moveCam = Time * 0.1;
-
-			XMVECTOR vecCamPosition = XMVectorSet(1.5f, 0.5f , 1.5f + moveCam, 0);
-			XMVECTOR vecCamLookAt = XMVectorSet(0, 0, 0, 0);
+			float moveCam = Time * 0.2;
+			XMVECTOR vecCamPosition = XMVectorSet(1.5f, 0.5f , 1.5f, 0);
+			XMVECTOR vecCamLookAt = XMVectorSet(0, moveCam, 0, 0);
 			XMVECTOR vecCamUp = XMVectorSet(0, 1, 0, 0);
 
 			XMMATRIX matView = XMMatrixLookAtLH(vecCamPosition, vecCamLookAt, vecCamUp);
@@ -94,11 +111,17 @@ namespace AAEngine {
 				1,                                                           // the near view-plane
 				100);                                                        // the far view-plane
 																			 // calculate the final matrix
-																			 // calculate the final matrix
-			XMMATRIX matFinal[4];
-			matFinal[0] = matTranslate[0] * matRotate[0] * matView * matProjection;
-			matFinal[1] = matTranslate[1] * matRotate[1] * matView * matProjection;
-			matFinal[2] = matTranslate[2] * matRotate[2] * matView * matProjection;
+									
+			// calculate the final matrix 
+			// XMMATRIX matFinal = matWorld * matView * matProjection;
+
+			XMMATRIX matFinal[6];
+			matFinal[0] = matRotate[0] * matTranslate[0] * matView * matProjection; //rotate first, then Translate
+			matFinal[1] = matRotate[1] * matTranslate[1] * matView * matProjection;
+			matFinal[4] = matRotate[6] * matRotate[0] * matTranslate[0] * matView * matProjection; //rotate first, then Translate
+			matFinal[5] = matRotate[1] * matRotate[6] * matTranslate[1] * matView * matProjection;
+				
+			matFinal[2] = matTranslate[2] * matRotate[2] * matView * matProjection; //Translate first then rotate
 			matFinal[3] = matTranslate[3] * matRotate[3] * matView * matProjection;
 
 			
@@ -106,6 +129,11 @@ namespace AAEngine {
 			m_pD3dContext->Draw(3, 0);
 			m_pD3dContext->UpdateSubresource(theShader->constantBuffer, 0, 0, &matFinal[1], 0, 0);
 			m_pD3dContext->Draw(3, 0);
+			m_pD3dContext->UpdateSubresource(theShader->constantBuffer, 0, 0, &matFinal[4], 0, 0);
+			m_pD3dContext->Draw(3, 0);
+			m_pD3dContext->UpdateSubresource(theShader->constantBuffer, 0, 0, &matFinal[5 ], 0, 0);
+			m_pD3dContext->Draw(3, 0);
+
 			m_pD3dContext->UpdateSubresource(theShader->constantBuffer, 0, 0, &matFinal[2], 0, 0);
 			m_pD3dContext->Draw(3, 0);
 			m_pD3dContext->UpdateSubresource(theShader->constantBuffer, 0, 0, &matFinal[3], 0, 0);

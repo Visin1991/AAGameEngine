@@ -24,8 +24,6 @@ DXbase::~DXbase()
 
 void DXbase::ReleaseAll()
 {
-	UnloadContent();
-
 	if (m_pBackBufferTarget)
 		m_pBackBufferTarget->Release();
 	if (m_pSwapChain)
@@ -191,7 +189,6 @@ bool DXbase::Initialize(HINSTANCE hinstance, HWND hw)
 	if (!SetUpRenderTargetView()) {return false;}
 	SetViewportAndDepthBuffer();
 	//======================================================================
-	return LoadContent();
 }
 
 void DXbase::DxBaseClearRenderTargetView(ID3D11RenderTargetView* m_pRenderTargetView, const FLOAT ColorRGBA[4])
@@ -207,13 +204,15 @@ bool DXbase::CompileD3DShader(char* filePath,char* entry,char* shaderModel, ID3D
 	shaderFlags |= D3DCOMPILE_DEBUG;
 #endif
 	//ID3DBlob interface
-	//
+
 	//This interface is used to return data of arbitrary length.
 	//Methods:
 	//		 ---GetBufferPointer :Retrieves a pointer to the blob's data.
 	//       ---GetBufferSize: Retrieves the size, in bytes, of the blob's data.
+
 	ID3DBlob* errorBuffer = 0;
 	HRESULT result;
+
 	//more detail at P101;
 	result = D3DX11CompileFromFile(filePath, 0, 0, entry, shaderModel,
 		shaderFlags, 0, 0, buffer, &errorBuffer, 0);
@@ -235,29 +234,3 @@ bool DXbase::CompileD3DShader(char* filePath,char* entry,char* shaderModel, ID3D
 	return true;
 }
 
-HRESULT DXbase::showBackBuffer()
-{
-	return E_NOTIMPL;
-}
-
-HRESULT DXbase::getDeviceState()
-{
-	return E_NOTIMPL;
-}
-
-HRESULT DXbase::reset()
-{
-	return E_NOTIMPL;
-}
-
-bool DXbase::LoadContent()
-{
-	// Load shader...whatever....
-	// Override with demo specifics, if any. . .
-	return true;
-}
-
-void DXbase::UnloadContent()
-{
-	// Override with demo specifics, if any. . .
-}

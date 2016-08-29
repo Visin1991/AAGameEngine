@@ -48,18 +48,12 @@ public:
 
 	bool Initialize(HINSTANCE hinstance, HWND hw);
 	void DXbase::DxBaseClearRenderTargetView(ID3D11RenderTargetView* m_pRenderTargetView, const FLOAT ColorRGBA[4]);
-	
-	HRESULT showBackBuffer();
-	HRESULT getDeviceState();
-	HRESULT reset();
 
 	bool CreateDeviceAndSwapChain(HWND& hw);
 	bool SetUpRenderTargetView();
 	void SetViewportAndDepthBuffer();
 
 	static bool CompileD3DShader(char* filePath, char* entry,char* shaderModel, ID3DBlob** buffer);
-	virtual bool LoadContent();
-	virtual void UnloadContent();
 
 	virtual void Update(float dt) = 0;
 	virtual void Render(float dt) = 0;

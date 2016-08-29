@@ -6,6 +6,7 @@
 #include"MaterialManager.h"
 #include"MeshManager.h"
 #include"RendererManager.h"
+#include"WindowsVirtualKeyInput.h"
 
 
 
@@ -48,6 +49,10 @@ bool GameEngineManager::MakeManagerSingleTons(HINSTANCE& hinstance, HWND& hw) {
 }
 
 void GameEngineManager::Update() {
+	if (GetAsyncKeyState(VK_ESCAPE))
+	{
+		PostQuitMessage(0);
+	}
 	unsigned int now = Timer::instance->GetCurrent();
 	unsigned int dt = now - prewTime;
 	float eclipse = dt / 1000;
